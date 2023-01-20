@@ -1,0 +1,11 @@
+<div class="container" >
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <select (change)="getMasterData($event)" class="form-select" aria-label="Default select example" style="margin-top: 20px;" >
+            <option selected value="-1" >Please Select Master</option>
+            <option *ngFor="let master of masters" value="{{master}}">{{master}}</option>
+          </select>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="dropdownChanged" >
+       <ngx-json-viewer [json]="selectedMasterData" ></ngx-json-viewer>
+    </div>
+</div>
